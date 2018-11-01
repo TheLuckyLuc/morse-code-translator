@@ -52,7 +52,7 @@ english.addEventListener('input', function() {
 // get the object values that correlate to the input keys
 function getValueByKey(obj, keyArray) {
     // create an empty array
-    let str = [];
+    const str = [];
     // loop through each item in the passed in string array
     for (const item of keyArray) {
         // replace spaces with '|', grab the object value if the input key exists, or don't add anyting to the array if neither condition passes
@@ -60,4 +60,23 @@ function getValueByKey(obj, keyArray) {
     }
     // replace the value of the morse code textarea with the translated string
     morseCode.textContent = str.join(' ');
+}
+
+morseCode.addEventListener('input', function() {
+    const strArray = morseCode.value.split(' ');
+
+    getKeyByValue(morse, strArray);
+});
+
+function getKeyByValue(obj, valueArray) {
+    const str = [];
+
+    for (const item of valueArray) {
+        item.trim();
+        const key = Object.keys(obj).find(key => obj[key] === item);
+        item === '|' ? str.push(' ')
+        : key === undefined ? null
+        : str.push(key);
+    }
+    english.textContent = str.join('');
 }
