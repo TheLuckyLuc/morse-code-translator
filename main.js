@@ -1,5 +1,6 @@
 const english = document.querySelector('#language-english');
 const morseCode = document.querySelector('#morse-code');
+const result = document.querySelector('#result-box');
 
 const morse = {
     a: '.-',
@@ -59,7 +60,7 @@ function getValueByKey(obj, keyArray) {
         item === ' ' ? str.push('|') : obj.hasOwnProperty(`${item}`) ? str.push(obj[item]) : null;
     }
     // replace the value of the morse code textarea with the translated string
-    morseCode.textContent = str.join(' ');
+    result.textContent = str.join(' ');
 }
 
 morseCode.addEventListener('input', function() {
@@ -78,5 +79,5 @@ function getKeyByValue(obj, valueArray) {
         : key === undefined ? null
         : str.push(key);
     }
-    english.textContent = str.join('');
+    result.textContent = str.join('').toUpperCase();
 }
