@@ -1,6 +1,6 @@
-const english = document.querySelector('#language-english');
-const morseCode = document.querySelector('#morse-code');
-const result = document.querySelector('#result-box');
+const english = document.querySelector('#translator__english--text');
+const morseCode = document.querySelector('#translator__morse--text');
+const result = document.querySelector('#translator__result--text');
 
 const morse = {
     a: '.-',
