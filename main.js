@@ -59,25 +59,33 @@ function getValueByKey(obj, keyArray) {
         // replace spaces with '|', grab the object value if the input key exists, or don't add anyting to the array if neither condition passes
         item === ' ' ? str.push('|') : obj.hasOwnProperty(`${item}`) ? str.push(obj[item]) : null;
     }
-    // replace the value of the morse code textarea with the translated string
+    // set the result box with the translated string
     result.textContent = str.join(' ');
 }
 
 morseCode.addEventListener('input', function() {
+    // create an array of all input characters using space as a separator
     const strArray = morseCode.value.split(' ');
 
     getKeyByValue(morse, strArray);
 });
 
 function getKeyByValue(obj, valueArray) {
+    // create an empty array
     const str = [];
-
+    // loop over each character in the array
     for (const item of valueArray) {
+        // trim any spaces off the edges (this will let you use a space to separate letters on input)
         item.trim();
+        // if there is an object that contains a key relating to the same value as the value input, set that key as the 'key' variable. 'key' will take on 'undefined' otherwise
         const key = Object.keys(obj).find(key => obj[key] === item);
+        // if a '|' is input, translate that to a space
         item === '|' ? str.push(' ')
+        // if the key variable takes on 'undefined' don't do anything
         : key === undefined ? null
+        // push the matched key to the array if neither of the above 2 conditions apply
         : str.push(key);
     }
+    // set the result box with the translated and joined string
     result.textContent = str.join('').toUpperCase();
 }
