@@ -1,3 +1,5 @@
+import "@babel/polyfill";
+
 const english = document.querySelector('#translator__english--text');
 const morseCode = document.querySelector('#translator__morse--text');
 const result = document.querySelector('#translator__result--text');

@@ -4,15 +4,24 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "autoprefixer": "postcss style.css --dir lib"
+    "autoprefixer": "postcss style.css --dir lib",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "autoprefixer": "^9.3.1",
     "postcss-cli": "^6.0.1"
   },
   "browserslist": [
     "last 10 version"
-  ]
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.24.0",
+    "webpack-cli": "^3.1.2"
+  }
 }
