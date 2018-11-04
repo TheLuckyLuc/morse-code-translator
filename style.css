@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: "Space Mono", monospace;
 }
 
 html,
@@ -15,8 +16,12 @@ body {
   align-items: center;
   margin-bottom: 2rem;
 }
+#translator h1 {
+  font-family: "Pattaya", sans-serif;
+}
 #translator label {
   display: block;
+  font-family: "Pattaya", sans-serif;
 }
 #translator .translator__section {
   display: flex;

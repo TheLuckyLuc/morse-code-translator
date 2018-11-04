@@ -98,10 +98,12 @@ function getKeyByValue(obj, valueArray) {
 function switchBoxes() {
     englishSection.classList.toggle('hide');
     morseSection.classList.toggle('hide');
+    // clear all the values in the textareas
     english.value = '';
     morseCode.value = '';
     result.textContent = '';
     
+    // change the inner text of the button depending on which textarea is visible
     englishSection.classList.contains('hide') ? button.innerHTML = 'Switch to English <i class="fas fa-exchange-alt"></i>'
     : button.innerHTML = 'Switch to Morse <i class="fas fa-exchange-alt"></i>';
 }
