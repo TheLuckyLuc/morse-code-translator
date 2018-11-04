@@ -1,6 +1,11 @@
 const english = document.querySelector('#translator__english--text');
 const morseCode = document.querySelector('#translator__morse--text');
 const result = document.querySelector('#translator__result--text');
+const englishSection = document.querySelector('#translator__english');
+const morseSection = document.querySelector('#translator__morse');
+const button = document.querySelector('button');
+
+button.addEventListener('click', switchBoxes);
 
 const morse = {
     a: '.-',
@@ -88,4 +93,15 @@ function getKeyByValue(obj, valueArray) {
     }
     // set the result box with the translated and joined string
     result.textContent = str.join('').toUpperCase();
+}
+
+function switchBoxes() {
+    englishSection.classList.toggle('hide');
+    morseSection.classList.toggle('hide');
+    english.value = '';
+    morseCode.value = '';
+    result.textContent = '';
+    
+    englishSection.classList.contains('hide') ? button.innerHTML = 'Switch to English <i class="fas fa-exchange-alt"></i>'
+    : button.innerHTML = 'Switch to Morse <i class="fas fa-exchange-alt"></i>';
 }

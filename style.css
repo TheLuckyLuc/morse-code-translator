@@ -49,4 +49,8 @@ body {
   transform: translateY(-0.1rem);
 }
 
+.hide {
+  display: none !important;
+}
+
 /*# sourceMappingURL=style.css.map */
