@@ -7,3 +7,26 @@ body {
     margin: 0;
     padding: 0;
 }
+
+#translator {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    label {
+        display: block;
+    }
+    .translator__section {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    textarea {
+        resize: none;
+        outline: none;
+        border: 1px solid rgba(194, 194, 194, 0.3);
+        box-shadow: inset 0px 0px 18px -6px rgba(0,0,0,0.4);
+    }
+}
